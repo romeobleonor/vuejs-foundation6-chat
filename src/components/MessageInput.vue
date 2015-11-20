@@ -1,16 +1,18 @@
 <script type="text/babel">
+	import store from '../store';
+
 	export default {
 		name: 'MessageInput',
-		props: ['member'],
 		data() {
 			return {
+				appState: store.state,
 				message: ''
 			}
 		},
 		methods: {
 			submitMessage() {
-				console.log('submit message', this.member, this.message);
-				this.$dispatch('add-message', this.member, this.message)
+				this.appState.addMessage(this.appState.currentMember, this.message);
+				this.message = '';
 			}
 		}
 	}

@@ -1,6 +1,13 @@
 <script type="text/babel">
+	import store from '../store';
+
 	export default {
-		name: 'RoomMembers'
+		name: 'RoomMembers',
+		data() {
+			return {
+				appState: store.state
+			}
+		}
 	}
 </script>
 
@@ -8,11 +15,9 @@
 	<section class="block-list">
 		<header>In This Room</header>
 		<ul>
-			<li><a href="#">Cady Heron</a></li>
-			<li><a href="#">Kevin Gnapoor</a></li>
-			<li><a href="#">Trang Pak</a></li>
-			<li><a href="#">Coach Carr</a></li>
-			<li><a href="#">Regina George</a></li>
+			<li v-for="member in appState.members">
+				<a href="#">{{member}}</a>
+			</li>
 		</ul>
 	</section>
 </template>

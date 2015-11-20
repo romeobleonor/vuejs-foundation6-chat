@@ -1,21 +1,16 @@
-import Vue from 'vue'
-import Sidebar from './components/Sidebar.vue';
-import Content from './components/Content.vue';
+import Vue from 'vue';
+import App from './components/App.vue';
+import {formatDate, fromNow} from './filters/MomentFilter';
 
 Vue.config.debug = true;
 
-console.log('hello vue');
+Vue.filter('formatDate', formatDate);
+Vue.filter('fromNow', fromNow);
 
 new Vue({
 	el: '#app',
 	components: {
-		Sidebar,
-		Content
-	},
-	data() {
-		return {
-			member: 'Chris Pappas'
-		}
+		App
 	}
 });
 

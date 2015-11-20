@@ -5,7 +5,6 @@
 
 	export default {
 		name: 'Content',
-		props: ['member'],
 		components: {
 			ContentHeader,
 			RoomMembers,
@@ -19,7 +18,7 @@
 		<content-header></content-header>
 		<div class="grid-block">
 			<div class="grid-block small-12 medium-9 vertical">
-				<message-pane :member="member"></message-pane>
+				<message-pane></message-pane>
 			</div>
 			<div class="grid-content medium-3 show-for-medium message-side-bar">
 				<room-members></room-members>

@@ -1,7 +1,13 @@
 <script type="text/babel">
-export default {
-	'name': 'Sidebar'
-}
+	import store from '../store';
+	export default {
+		name: 'Sidebar',
+		data() {
+			return {
+				appState: store.state
+			}
+		}
+	}
 </script>
 
 <template>
@@ -58,7 +64,7 @@ export default {
 		</div>
 		<div class="grid-content collapse shrink avatar-section">
 			<img src="http://placehold.it/50x50">
-			Regina George
+			{{appState.currentMember}}
 		</div>
 	</div>
 </template>
