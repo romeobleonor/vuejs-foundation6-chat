@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export function formatDate(timestamp, formatString = 'lll') {
+export function formatDate(timestamp, formatString) {
 	return moment(timestamp).format(formatString)
 }
 
