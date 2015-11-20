@@ -3,11 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Loser Cruiser - The wheels on the bus go round and round</title>
+	<link rel="stylesheet" href="node_modules/foundation-apps/dist/css/foundation-apps.min.css">
 </head>
 <body>
-<h1>Loser Cruiser - The wheels on the bus go round and round</h1>
-<p>A simple app to show my commonly-used bus routes and how late they are today.</p>
 
+<div id="app" class="grid-frame">
 
+	<sidebar></sidebar>
+
+	<content :member="member"></content>
+
+</div>
+
+<script src="static/build.js"></script>
 </body>
 </html>
