@@ -11,6 +11,17 @@
 			return {
 				appState: store.state
 			}
+		},
+		ready() {
+			this.$el.scrollTop = this.$el.scrollHeight;
+		},
+		watch: {
+			'appState.messages': function() {
+				// scroll to bottom
+				this.$nextTick(function() {
+					this.$el.scrollTop = this.$el.scrollHeight;
+				});
+			}
 		}
 	}
 </script>
